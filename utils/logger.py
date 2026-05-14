@@ -1,9 +1,8 @@
 """
 logger.py
-Factory function that returns a named logger with both a console handler
-and a daily rotating file handler. Call get_logger(__name__) in every module.
+Factory function that returns a named logger with a console handler and a
+daily rotating file handler. Call get_logger(__name__) in every module.
 """
-
 import logging
 from datetime import datetime
 import os
@@ -26,9 +25,12 @@ def get_logger(caller_name: str, loglevel: str = LOG_LEVEL) -> logging.Logger:
         logging.Formatter(fmt=LOG_FORMAT, datefmt=LOG_DATE_FORMAT)
     )
 
-    # ── File handler — daily log file ─────────────────────────────────────────
+    # ── File handler — one log file per day ───────────────────────────────────
+    # makedirs ensures the log directory exists on a fresh clone — safe to call repeatedly
+    os.makedirs(LOGS_DIR, exist_ok=True)
     log_filename = datetime.now().strftime("test_run_%Y%m%d.log")
     log_filepath = os.path.join(LOGS_DIR, log_filename)
+
     file_handler = logging.FileHandler(log_filepath, "a", encoding="utf-8")
     file_handler.setLevel(loglevel)
     file_handler.setFormatter(

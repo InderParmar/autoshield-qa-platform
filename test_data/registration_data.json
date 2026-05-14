@@ -1,0 +1,41 @@
+{
+    "valid_user":{
+        "first_name": "John",
+        "last_name": "William",
+        "address": "123 Fast Street",
+        "city": "London",
+        "state": "Ontario",
+        "zip_code": "1K8 OL9",
+        "phone_number": "1234345099",
+        "SSN": "123-4950-393",
+        "username": "johnwilliam",
+        "password": "password"
+    },
+    "duplicate_user":{
+        "first_name": "John",
+        "last_name": "William",
+        "address": "123 Fast Street",
+        "city": "London",
+        "state": "Ontario",
+        "zip_code": "1K8 OL9",
+        "phone_number": "1234345099",
+        "SSN": "123-4950-393",
+        "username": "johnwilliam",
+        "password": "password"
+
+    },
+    "missing_fields_user":{
+        "first_name": "John",
+        "last_name": "William",
+        "address": "123 Fast Street",
+        "city": "London",
+        "state": "Ontario",
+        "zip_code": "",
+        "phone_number": "1234345099",
+        "SSN": "123-4950-393",
+        "username": "johnwilliam",
+        "password": "password"
+
+    }
+}
+
