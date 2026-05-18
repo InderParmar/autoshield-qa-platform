@@ -1,15 +1,20 @@
 import pytest
-from playwright.sync_api import Browser, BrowserContext, Page, expect
-from config.config_reader import BASE_URL
 import uuid
 import json
+import re
+from playwright.sync_api import Browser, BrowserContext, Page, expect
+from config.config_reader import BASE_URL
 from pages.login_page import LoginPage
 from pages.registration_page import RegistrationPage
+from utils import wait_helper
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 
 # ── Browser fixture ────────────────────────────────────────────────────────────
 # Scope: session — one browser instance for the entire test run
-# --browser flag controls which browser; --headed flag runs visibly (default: headless)
+# --browser controls which browser; --headed runs visibly (default: headless)
 @pytest.fixture(scope="session")
 def browser_instance(playwright, pytestconfig):
     browser_name = pytestconfig.getoption("--browser")
@@ -51,17 +56,51 @@ def registered_user(browser_instance, base_url, test_data):
 
     registration_page.navigate_to_registration(base_url)
 
+    # Generate a unique username to avoid conflicts on repeated runs
     user_data = test_data["valid_user"].copy()
     user_data["username"] = f"{user_data.get('username')}{str(uuid.uuid4())[:6]}"
     registration_page.register(user_data)
 
-    # Confirm registration succeeded before allowing any test to proceed
+    # Confirm registration succeeded before proceeding
     expect(registration_page.get_success_locator()).to_contain_text(
         f"Welcome {user_data['username']}", timeout=5000
     )
 
-    context.close()
+    # ── Open a second account ──────────────────────────────────────────────────
+    # Transfer tests require two distinct accounts — ParaBank creates only one on registration
+    registration_page.navigate(f"{BASE_URL}/openaccount.htm")
+    page.wait_for_url("**/openaccount.htm", timeout=5000)
+    page.locator("select#type").select_option(index=1)
 
+    # CRITICAL: Wait for the 'From Account' dropdown to populate via AJAX before submitting
+    # Clicking before this loads causes a silent backend failure — the form sends no account ID
+    page.locator("select#fromAccountId option").first.wait_for(state="attached")
+    page.locator("input[value='Open New Account']").click()
+
+    # Verify the new account was created and has a valid 5-digit ID
+    expect(page.locator("div[id='openAccountResult'] p b")).to_contain_text(
+        "Your new account number", timeout=5000
+    )
+    expect(page.locator("#newAccountId")).to_have_text(re.compile(r"\d{5}"), timeout=5000)
+    new_account_id = page.locator("#newAccountId").text_content()
+    logger.debug(f"Second account opened successfully — account ID: {new_account_id}")
+
+    # ── Confirm second account is visible in overview before any test runs ─────
+    # ParaBank's overview loads accounts via AJAX — poll until the second row appears
+    max_retries = 10
+    for _ in range(max_retries):
+        page.goto(f"{BASE_URL}/overview.htm")
+        if wait_helper.check_with_timeout(
+            page, "tbody tr:nth-child(2) td:nth-child(1)", timeout=2000
+        ):
+            break
+    else:
+        raise RuntimeError(
+            "Second account did not appear in overview after opening — "
+            f"new account ID was: {new_account_id}"
+        )
+
+    context.close()
     return {"username": user_data["username"], "password": user_data["password"]}
 
 
