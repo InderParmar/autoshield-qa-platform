@@ -12,12 +12,12 @@ class TestTransfer:
     
     def test_valid_transfer_shows_success(self, logged_in_page):
         self.transfer_page.navigate_to_transfer_funds(BASE_URL)
-        self.transfer_page.transfer_funds(amount= "200", from_account_index= 0, to_account_index= 0)
+        self.transfer_page.transfer_funds(amount= "200", from_account_index= 0, to_account_index= 1)
         assert "transferred" in self.transfer_page.get_success_message()
         
     def test_transfer_zero_amount_shows_error(self, logged_in_page):
         self.transfer_page.navigate_to_transfer_funds(BASE_URL)
-        self.transfer_page.transfer_funds(amount= "", from_account_index= 0, to_account_index= 0)
+        self.transfer_page.transfer_funds(amount= "", from_account_index= 0, to_account_index= 1)
         assert "error" in self.transfer_page.get_error_message().lower()
 
     def test_transfer_page_loads(self, logged_in_page):
