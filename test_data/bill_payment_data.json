@@ -1,0 +1,23 @@
+{
+    "valid_payment":{
+        "payee_name": "John",
+        "address": "123 Fast Street",
+        "city": "London",
+        "state": "Ontario",
+        "zip_code": "1K8 OL9",
+        "phone_number": "1234345099",
+        "account_number": "123-4950-393",
+        "amount": "50"
+    },
+    "missing_fields_payment":{
+        "payee_name": "",
+        "address": "123 Fast Street",
+        "city": "London",
+        "state": "Ontario",
+        "zip_code": "1K8 OL9",
+        "phone_number": "1234345099",
+        "account_number": "123-4950-393",
+        "amount": "50"
+    }
+}
+
