@@ -11,7 +11,10 @@ class AccountsPage(BasePage):
 
     def __init__(self, page: Page):
         super().__init__(page)
-        self._account_balance = "tbody tr td:nth-child(1) b:nth-child(1)"
+        # Balance of the first account row — used in E2E balance change assertions
+        self._initial_account_balance = "tbody tr:nth-child(1) td:nth-child(2)"
+        # Total balance row at the bottom of the accounts table
+        self._total_account_balance   = "tbody tr td:nth-child(2) b:nth-child(1)"
         self._welcome_message_element = ".smallText"
 
     def _get_account_list_locator(self, count: int) -> str:
@@ -21,8 +24,8 @@ class AccountsPage(BasePage):
     def _get_accounts_list_elements(self) -> list:
         """
         Scans table rows one by one until a row is not found or not numeric.
-        Uses wait_helper to detect row existence without hard-coding row count.
-        Returns a list of CSS selectors for each valid account row.
+        Uses wait_helper to detect row existence without hardcoding the row count.
+        Returns a list of CSS selectors — one per valid account row.
         """
         element_visible = True
         count = 0
@@ -54,9 +57,16 @@ class AccountsPage(BasePage):
         return account_list
 
     def get_total_balance(self) -> str:
-        balance = self.page.locator(self._account_balance).text_content()
+        """Returns total balance as a plain numeric string — strips $ and commas."""
+        balance = self.page.locator(self._total_account_balance).text_content()
         logger.debug(f"Total balance text: '{balance}'")
-        return balance
+        return balance[1:].replace(",", "")
+
+    def get_initial_account_balance(self) -> str:
+        """Returns the first account's balance as a plain numeric string — strips $ and commas."""
+        balance = self.page.locator(self._initial_account_balance).text_content()
+        logger.debug(f"First account balance text: '{balance}'")
+        return balance[1:].replace(",", "")
 
     def is_accounts_page(self) -> bool:
         return "overview" in self.get_current_url()

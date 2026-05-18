@@ -18,7 +18,9 @@ class BasePage:
 
     def navigate(self, url: str):
         logger.info(f"Navigating to: {url}")
-        self.page.goto(url)
+        # domcontentloaded is faster than networkidle and sufficient for ParaBank
+        # Individual page objects call wait_for_selector for their key element after navigation
+        self.page.goto(url, wait_until="domcontentloaded")
 
     def get_title(self) -> str:
         return self.page.title()
@@ -31,8 +33,9 @@ class BasePage:
         self.page.wait_for_url(re.compile(f".*{url_pattern}.*"))
 
     def wait_for_selector(self, selector: str):
-        # Playwright auto-waits on most actions — use this for explicit readiness checks
-        self.page.wait_for_selector(selector)
+        # state="attached" means in DOM — does not require visibility
+        # Use this after navigation to confirm the page is ready before interacting
+        self.page.wait_for_selector(selector, state="attached")
 
     def take_screenshot(self, name: str):
         path = f"{SCREENSHOT_DIR}/{name}.png"

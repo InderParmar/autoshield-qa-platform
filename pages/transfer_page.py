@@ -12,7 +12,7 @@ class TransferPage(BasePage):
         super().__init__(page)
         self._amount_input                  = "#amount"
         self._from_account_dropdown         = "#fromAccountId"
-        self._to_account_dropdown           = "#toAccountId"
+        self._to_account_dropdown           = "select#toAccountId"
         self._transfer_button               = "input[value='Transfer']"
         self._success_message_title_element = "div[id='showResult'] h1[class='title']"
         self._success_message_body_element  = "#showResult p:nth-of-type(1)"
@@ -22,11 +22,21 @@ class TransferPage(BasePage):
     def navigate_to_transfer_funds(self, baseurl: str) -> None:
         logger.info("Navigating to transfer funds page")
         self.navigate(f"{baseurl}/transfer.htm")
+        # Explicit wait for the amount field — ParaBank's transfer form loads via AJAX
+        self.wait_for_selector(self._amount_input)
 
     def transfer_funds(self, amount: str, from_account_index: int, to_account_index: int) -> None:
         logger.info(f"Transferring amount: '{amount}' | from index: {from_account_index} → to index: {to_account_index}")
         self.page.locator(self._amount_input).fill(amount)
         self.page.locator(self._from_account_dropdown).select_option(index=from_account_index)
+
+        # Wait for the to-account dropdown to have at least 2 options
+        # ParaBank populates this via AJAX — the second account may not appear immediately
+        self.page.wait_for_function(
+            f"document.querySelector('{self._to_account_dropdown}').options.length >= 2",
+            timeout=10000
+        )
+
         self.page.locator(self._to_account_dropdown).select_option(index=to_account_index)
         self.page.locator(self._transfer_button).click()
 

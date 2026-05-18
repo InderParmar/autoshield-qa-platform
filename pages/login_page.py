@@ -19,6 +19,8 @@ class LoginPage(BasePage):
     def navigate_to_login(self, baseurl: str) -> None:
         logger.info("Navigating to login page")
         self.navigate(baseurl)
+        self.wait_for_selector(self._username_input)
+
 
     def login(self, username: str, password: str) -> None:
         logger.info(f"Attempting login with username: {username}")

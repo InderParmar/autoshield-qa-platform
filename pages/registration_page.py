@@ -32,6 +32,7 @@ class RegistrationPage(BasePage):
     def navigate_to_registration(self, baseurl: str) -> None:
         logger.info("Navigating to registration page")
         self.navigate(f"{baseurl}/register.htm")
+        self.wait_for_selector(self._first_name_input)
 
     def fill_registration_form(self, data: dict) -> None:
         logger.info(f"Filling registration form for username: {data.get('username')}")
