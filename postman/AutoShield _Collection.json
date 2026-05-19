@@ -1,0 +1,564 @@
+{
+  "info": {
+    "_postman_id": "2f5bd175-494a-47cd-b7a0-0f47301023b9",
+    "name": "AutoShield — ParaBank API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40031240"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login — Valid Credentials",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () =>",
+                  "{",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 2000 ms\", () =>",
+                  "{",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response body contains id field\", () =>",
+                  "{",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.have.property(\"id\");",
+                  "});",
+                  "",
+                  "pm.test(\"Set environment variable for Customer id\", () =>",
+                  "{   ",
+                  "    const body = pm.response.json();",
+                  "    if(pm.response.code === 200 && body.id) {",
+                  "        pm.environment.set(\"customer_id\", body.id);",
+                  "        pm.expect(pm.environment.get(\"customer_id\")).to.eql(body.id);",
+                  "    }",
+                  "    else {",
+                  "        pm.expect.fail(\"Login failed - customer id not saved. Subsequent tests might fail\");",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/login/{{username}}/{{password}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "login",
+                "{{username}}",
+                "{{password}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login — Invalid Credentials",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Invalid login returns error status (400/401/500)\", () =>",
+                  "{",
+                  "    pm.expect(pm.response.code).to.be.oneOf([500, 401, 400]);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 2000 ms\", ()=>",
+                  "{",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000)",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/login/wronguser/wrongpass",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "login",
+                "wronguser",
+                "wrongpass"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Accounts",
+      "item": [
+        {
+          "name": "Get Customer Accounts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () =>",
+                  "{",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 2000 ms\", () =>",
+                  "{",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an array\", () =>",
+                  "{",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.be.an(\"array\");",
+                  "});",
+                  "",
+                  "pm.test(\"Array length is greater than 0\", () =>",
+                  "{",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body.length).to.be.greaterThan(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Each item has 'id' field\", () =>",
+                  "{",
+                  "    const body = pm.response.json();",
+                  "    body.forEach(item => {",
+                  "        pm.expect(item).to.have.property('id')",
+                  "    }); ",
+                  "});",
+                  "",
+                  "pm.test(\"Set environment variable 'account_id' \", () =>",
+                  "{   ",
+                  "    const body = pm.response.json();",
+                  "    if(pm.response.code === 200 && body[0].id) {",
+                  "        pm.environment.set(\"account_id\", body[0].id);",
+                  "        pm.expect(pm.environment.get(\"account_id\")).to.eql(body[0].id);",
+                  "    }",
+                  "    else {",
+                  "        pm.expect.fail(\"Customer's Accounts fetching failed- account id not saved. Subsequent tests might fail\");",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/customers/{{customer_id}}/accounts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "customers",
+                "{{customer_id}}",
+                "accounts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () =>",
+                  "{",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 2000 ms\", () =>",
+                  "{",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response has 'id', 'customerId', 'balance' fields\", () =>",
+                  "{",
+                  "    const body = pm.response.json();",
+                  "    pm.expect(body).to.have.include.keys(\"id\", \"customerId\", \"balance\");",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/accounts/{{account_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{account_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Account - Invalid ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Invalid account ID returns error status (400/404/500)\", () =>",
+                  "{",
+                  "    pm.expect(pm.response.code).to.be.oneOf([500, 404, 400])",
+                  "})"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/accounts/9999999",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts",
+                "9999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create new Account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Account created successfully\", () =>",
+                  "{",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "// Store the new account ID for use in transfer",
+                  "pm.test(\"Set environment variable 'account_id_2' \", () =>",
+                  "{   ",
+                  "    const body = pm.response.json();",
+                  "    if(pm.response.code === 200 && body.id) {",
+                  "        pm.environment.set(\"account_id_2\", body.id);",
+                  "        pm.expect(pm.environment.get(\"account_id_2\")).to.eql(body.id);",
+                  "    }",
+                  "    else {",
+                  "        pm.expect.fail(\"Account creation failed - account id not saved. Subsequent tests might fail\");",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/createAccount?customerId={{customer_id}}&newAccountType=1&fromAccountId={{account_id}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "",
+                "createAccount"
+              ],
+              "query": [
+                {
+                  "key": "customerId",
+                  "value": "{{customer_id}}"
+                },
+                {
+                  "key": "newAccountType",
+                  "value": "1"
+                },
+                {
+                  "key": "fromAccountId",
+                  "value": "{{account_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transfer",
+      "item": [
+        {
+          "name": "Transfer Funds - Valid",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () =>",
+                  "{",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 2000ms\", () => {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response confirms transfer completed\", () => {",
+                  "    pm.expect(pm.response.text()).to.include(\"transferred\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/transfer?fromAccountId={{account_id}}&toAccountId={{account_id_2}}&amount=10",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transfer"
+              ],
+              "query": [
+                {
+                  "key": "fromAccountId",
+                  "value": "{{account_id}}"
+                },
+                {
+                  "key": "toAccountId",
+                  "value": "{{account_id_2}}"
+                },
+                {
+                  "key": "amount",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transactions",
+      "item": [
+        {
+          "name": "Get Account Transactions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () =>",
+                  "{",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time under 2000ms\", () => {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+                  "});",
+                  "",
+                  "pm.test(\"Response is an Array\", () =>",
+                  "{",
+                  "    body = pm.response.json();",
+                  "    pm.expect(body).to.be.an(\"array\");",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/accounts/{{account_id}}/transactions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{account_id}}",
+                "transactions"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

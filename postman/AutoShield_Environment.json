@@ -1,0 +1,46 @@
+{
+	"id": "f2507225-1e49-4ffb-85f5-fc7e0a0e88b7",
+	"name": "AutoShield - Parabank",
+	"values": [
+		{
+			"key": "base_url",
+			"value": "https://parabank.parasoft.com/parabank/services/bank",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "customer_id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_id",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "account_id_2",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-05-19T09:53:57.374Z",
+	"_postman_exported_using": "Postman/12.7.2"
+}
