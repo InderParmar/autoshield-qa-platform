@@ -11,7 +11,7 @@ from pytest_bdd import given, when, then, scenarios
 from config.config_reader import BASE_URL, WRONG_USERNAME, WRONG_PASSWORD
 
 # Register all scenarios from login.feature with this module
-scenarios("bdd/features/login.feature")
+scenarios("../features/login.feature")
 
 
 @given("I am on the Parabank login page")

@@ -10,7 +10,7 @@ from pytest_bdd import given, when, then, scenarios
 from config.config_reader import BASE_URL
 
 # Register all scenarios from registration.feature with this module
-scenarios("bdd/features/registration.feature")
+scenarios("../features/registration.feature")
 
 
 @given("I am on the Parabank registration page")

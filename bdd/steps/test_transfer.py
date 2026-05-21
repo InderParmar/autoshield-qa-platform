@@ -9,7 +9,7 @@ from pytest_bdd import given, when, then, scenarios
 from config.config_reader import BASE_URL
 
 # Register all scenarios from transfer.feature with this module
-scenarios("bdd/features/transfer.feature")
+scenarios("../features/transfer.feature")
 
 
 @given("I am logged into Parabank")
