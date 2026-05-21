@@ -1,0 +1,21 @@
+2026-05-21 19:17:54  [INFO    ]  api_tests.conftest  →  Initialising ParaBankClient for API test session
+2026-05-21 19:17:54  [INFO    ]  api_tests.api_utils.api_helper  →  ParaBankClient initialised
+2026-05-21 19:17:55  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:18:25  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:18:55  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:19:25  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:19:55  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:20:26  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:20:56  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:20:56  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw account request for ID: 999999999
+2026-05-21 19:21:27  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:21:57  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:21:57  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw login request for username: wrong_username
+2026-05-21 19:22:27  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:22:57  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:23:28  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:23:58  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:24:28  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:24:58  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:25:29  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:25:59  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
