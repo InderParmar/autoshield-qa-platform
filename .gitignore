@@ -1,11 +1,21 @@
+# Generated test reports — not committed
 reports/*.html
 reports/screenshots/*.png
+reports/logs/*.log
+
+# Exclude the live results index page from the ignore rule
+!reports/index.html
+
+# Python
 __pycache__/
 .pytest_cache/
 *.pyc
 .env
-node_modules/
+
+# Virtual environments
 venv/
 .venv/
 env/
-reports/logs/*.log
+
+# Node
+node_modules/
