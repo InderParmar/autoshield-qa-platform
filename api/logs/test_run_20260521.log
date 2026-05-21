@@ -1,21 +1,47 @@
-2026-05-21 19:17:54  [INFO    ]  api_tests.conftest  →  Initialising ParaBankClient for API test session
-2026-05-21 19:17:54  [INFO    ]  api_tests.api_utils.api_helper  →  ParaBankClient initialised
-2026-05-21 19:17:55  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:18:25  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:18:55  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:19:25  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:19:55  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:20:26  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:20:56  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:20:56  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw account request for ID: 999999999
-2026-05-21 19:21:27  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:21:57  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:21:57  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw login request for username: wrong_username
-2026-05-21 19:22:27  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:22:57  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:23:28  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:23:58  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:24:28  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:24:58  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:25:29  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
-2026-05-21 19:25:59  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:37:27  [INFO    ]  api_tests.conftest  →  Initialising ParaBankClient for API test session
+2026-05-21 19:37:27  [INFO    ]  api_tests.api_utils.api_helper  →  ParaBankClient initialised
+2026-05-21 19:37:27  [INFO    ]  conftest  →  Launching browser: chromium | headless: True
+2026-05-21 19:37:28  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-21 19:37:28  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-21 19:37:28  [INFO    ]  conftest  →  Registering session user: johnwilliamb08586
+2026-05-21 19:37:28  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliamb08586
+2026-05-21 19:37:28  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-21 19:37:28  [INFO    ]  conftest  →  Registration confirmed for: johnwilliamb08586
+2026-05-21 19:37:28  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/openaccount.htm
+2026-05-21 19:37:29  [DEBUG   ]  conftest  →  Second account opened successfully — account ID: 27885
+2026-05-21 19:37:29  [INFO    ]  conftest  →  Session user setup complete — registration and second account confirmed
+2026-05-21 19:37:29  [INFO    ]  api_tests.conftest  →  Authenticating API session for: johnwilliamb08586
+2026-05-21 19:37:29  [INFO    ]  api_tests.api_utils.api_helper  →  Logging in as: johnwilliamb08586
+2026-05-21 19:37:29  [DEBUG   ]  api_tests.api_utils.api_helper  →  Login successful — status: 200
+2026-05-21 19:37:29  [INFO    ]  api_tests.conftest  →  API authentication successful — customer ID: 21980
+2026-05-21 19:37:29  [INFO    ]  api_tests.api_utils.api_helper  →  Fetching accounts for customer ID: 21980
+2026-05-21 19:37:29  [DEBUG   ]  api_tests.api_utils.api_helper  →  Retrieved 2 account(s) for customer 21980
+2026-05-21 19:37:29  [INFO    ]  api_tests.api_utils.api_helper  →  Fetching accounts for customer ID: 21980
+2026-05-21 19:37:29  [DEBUG   ]  api_tests.api_utils.api_helper  →  Retrieved 2 account(s) for customer 21980
+2026-05-21 19:37:29  [INFO    ]  api_tests.api_utils.api_helper  →  Fetching accounts for customer ID: 21980
+2026-05-21 19:37:29  [DEBUG   ]  api_tests.api_utils.api_helper  →  Retrieved 2 account(s) for customer 21980
+2026-05-21 19:37:29  [DEBUG   ]  api_tests.conftest  →  Account IDs available for testing: [27774, 27885]
+2026-05-21 19:37:29  [DEBUG   ]  api_tests.api_utils.api_helper  →  Fetching details for account ID: 27774
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw account request for ID: 999999999
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Logging in as: johnwilliamb08586
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Login successful — status: 200
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw login request for username: wrong_username
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Raw login request for username: johnwilliamb08586
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Creating account — customer: 21980, type: 1, from: 27774
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  New account created — ID: 27996
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Transferring 10 from account 27774 to 27996
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Transfer response — status: 200, body: Successfully transferred $10 from account #27774 to account #27996
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Fetching transactions for account ID: 27774
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Retrieved 3 transaction(s) for account 27774
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Creating account — customer: 21980, type: 1, from: 27774
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  New account created — ID: 28107
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Transferring 10 from account 27774 to 28107
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Transfer response — status: 200, body: Successfully transferred $10 from account #27774 to account #28107
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Fetching transactions for account ID: 27774
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  Retrieved 5 transaction(s) for account 27774
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Creating account — customer: 21980, type: 1, from: 27774
+2026-05-21 19:37:30  [DEBUG   ]  api_tests.api_utils.api_helper  →  New account created — ID: 28218
+2026-05-21 19:37:30  [INFO    ]  api_tests.api_utils.api_helper  →  Transferring 10 from account 27774 to 28218
+2026-05-21 19:37:31  [DEBUG   ]  api_tests.api_utils.api_helper  →  Transfer response — status: 200, body: Successfully transferred $10 from account #27774 to account #28218
+2026-05-21 19:37:31  [DEBUG   ]  api_tests.api_utils.api_helper  →  Fetching transactions for account ID: 27774
+2026-05-21 19:37:31  [DEBUG   ]  api_tests.api_utils.api_helper  →  Retrieved 7 transaction(s) for account 27774
