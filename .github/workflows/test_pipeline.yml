@@ -1,0 +1,63 @@
+name: AutoShield — QA Platform
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chromium, firefox, webkit]
+      fail-fast: false
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: playwright install --with-deps
+
+      - name: Run UI tests
+        run: |
+          pytest tests/ bdd/ \
+            --browser=${{ matrix.browser }} \
+            --html=reports/report_ui_${{ matrix.browser }}.html \
+            --self-contained-html \
+            -v
+        continue-on-error: true
+
+      - name: Run API tests
+        run: |
+          pytest api_tests/ \
+            --html=reports/report_api.html \
+            --self-contained-html \
+            -v
+        continue-on-error: true
+
+      - name: Upload reports as artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reports-${{ matrix.browser }}
+          path: reports/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main' && always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports/
+          destination_dir: ${{ matrix.browser }}
+          keep_files: true
