@@ -105,3 +105,17 @@ jobs:
           publish_dir: reports/
           destination_dir: api
           keep_files: true
+
+          
+      - name: Prepare root index for GitHub Pages
+        run: |
+          mkdir -p deploy_root
+          cp reports/index.html deploy_root/index.html
+
+      - name: Deploy index page to GitHub Pages root
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main' && always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: deploy_root/
+          keep_files: true
