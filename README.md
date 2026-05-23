@@ -94,7 +94,7 @@ autoshield-qa-platform/
 ├── performance/
 │   └── locustfile.py              # Locust load test
 ├── postman/
-│   ├── AutoShield _Collection.json
+│   ├── AutoShield_Collection.json
 │   └── AutoShield_Environment.json
 ├── docs/
 │   └── bug-reports/               # 7 documented ParaBank bugs
