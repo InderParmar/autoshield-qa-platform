@@ -3,9 +3,9 @@ reports/*.html
 reports/screenshots/*.png
 reports/logs/*.log
 
-# Exclude the live results index page from the ignore rule
+# Exclude the live results index page and locust performance testing from the ignore rule
 !reports/index.html
-
+!reports/performance_report.html
 # Python
 __pycache__/
 .pytest_cache/
