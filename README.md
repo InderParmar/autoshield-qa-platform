@@ -9,6 +9,8 @@
 
 A full-stack QA automation platform targeting [ParaBank](https://parabank.parasoft.com) — a demo banking application with a full UI and REST API. Built to demonstrate end-to-end test engineering across UI automation, API testing, BDD, CI/CD, and performance testing.
 
+![AutoShield tests run demo](docs/autoshield_demo.gif)
+
 ---
 
 ## Live Test Reports
@@ -94,7 +96,7 @@ autoshield-qa-platform/
 ├── performance/
 │   └── locustfile.py              # Locust load test
 ├── postman/
-│   ├── AutoShield_Collection.json
+│   ├── AutoShield _Collection.json
 │   └── AutoShield_Environment.json
 ├── docs/
 │   └── bug-reports/               # 7 documented ParaBank bugs
