@@ -1,187 +1,242 @@
-2026-05-24 08:46:24  [INFO    ]  conftest  →  Launching browser: firefox | headless: True
-2026-05-24 08:46:25  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:25  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:25  [INFO    ]  conftest  →  Registering session user: johnwilliam699cc4
-2026-05-24 08:46:25  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam699cc4
-2026-05-24 08:46:26  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:26  [INFO    ]  conftest  →  Registration confirmed for: johnwilliam699cc4
-2026-05-24 08:46:26  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/openaccount.htm
-2026-05-24 08:46:26  [DEBUG   ]  conftest  →  Second account opened successfully — account ID: 14787
-2026-05-24 08:46:27  [INFO    ]  conftest  →  Session user setup complete — registration and second account confirmed
-2026-05-24 08:46:27  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:27  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:27  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:27  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:28  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:28  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:28  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:28  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:29  [DEBUG   ]  utils.wait_helper  →  Selector 'tbody tr:nth-child(3) td:nth-child(1)' found but text is not numeric: 'Total'
-2026-05-24 08:46:29  [DEBUG   ]  pages.accounts_page  →  Found 2 account row(s)
-2026-05-24 08:46:29  [DEBUG   ]  pages.accounts_page  →  Account list retrieved: ['14676', '14787']
-2026-05-24 08:46:29  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:29  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:29  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:30  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:30  [DEBUG   ]  pages.accounts_page  →  Total balance text: '$515.50'
-2026-05-24 08:46:30  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:30  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:31  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:31  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:31  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
-2026-05-24 08:46:31  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
-2026-05-24 08:46:31  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:31  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:32  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:32  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:32  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
-2026-05-24 08:46:32  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
-2026-05-24 08:46:32  [INFO    ]  pages.bill_payment_page  →  Filling bill payment form for payee: John
-2026-05-24 08:46:32  [INFO    ]  pages.bill_payment_page  →  Submitting bill payment
-2026-05-24 08:46:32  [DEBUG   ]  pages.bill_payment_page  →  Bill payment success — title: 'Bill Payment Complete' | body: '
+2026-05-24 08:44:25  [INFO    ]  conftest  →  Launching browser: firefox | headless: True
+2026-05-24 08:44:26  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:44:26  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:44:27  [INFO    ]  conftest  →  Registering session user: johnwilliam3dfba7
+2026-05-24 08:44:27  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam3dfba7
+2026-05-24 08:44:27  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:44:27  [INFO    ]  conftest  →  Registration confirmed for: johnwilliam3dfba7
+2026-05-24 08:44:27  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/openaccount.htm
+2026-05-24 08:44:28  [DEBUG   ]  conftest  →  Second account opened successfully — account ID: 30327
+2026-05-24 08:44:28  [INFO    ]  conftest  →  Session user setup complete — registration and second account confirmed
+2026-05-24 08:44:28  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:28  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:29  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:29  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:29  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:29  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:30  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:30  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:30  [DEBUG   ]  utils.wait_helper  →  Selector 'tbody tr:nth-child(3) td:nth-child(1)' found but text is not numeric: 'Total'
+2026-05-24 08:44:30  [DEBUG   ]  pages.accounts_page  →  Found 2 account row(s)
+2026-05-24 08:44:30  [DEBUG   ]  pages.accounts_page  →  Account list retrieved: ['30216', '30327']
+2026-05-24 08:44:31  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:31  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:31  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:31  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:31  [DEBUG   ]  pages.accounts_page  →  Total balance text: '$515.50'
+2026-05-24 08:44:32  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:32  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:32  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:32  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:32  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
+2026-05-24 08:44:32  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
+2026-05-24 08:44:33  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:33  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:33  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:33  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:33  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
+2026-05-24 08:44:33  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
+2026-05-24 08:44:34  [INFO    ]  pages.bill_payment_page  →  Filling bill payment form for payee: John
+2026-05-24 08:44:34  [INFO    ]  pages.bill_payment_page  →  Submitting bill payment
+2026-05-24 08:44:34  [DEBUG   ]  pages.bill_payment_page  →  Bill payment success — title: 'Bill Payment Complete' | body: '
         Bill Payment to  in the amount of  from account  was successful.
     '
-2026-05-24 08:46:32  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:32  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:33  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:33  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:33  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
-2026-05-24 08:46:33  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
-2026-05-24 08:46:33  [INFO    ]  pages.bill_payment_page  →  Filling bill payment form for payee: 
-2026-05-24 08:46:33  [INFO    ]  pages.bill_payment_page  →  Submitting bill payment
-2026-05-24 08:46:33  [DEBUG   ]  pages.bill_payment_page  →  Validation error for field 'name': 'Payee name is required.'
-2026-05-24 08:46:34  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:34  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:34  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:34  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:34  [INFO    ]  pages.accounts_page  →  Navigating to accounts overview page
-2026-05-24 08:46:34  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/overview.htm
-2026-05-24 08:46:35  [DEBUG   ]  pages.accounts_page  →  First account balance text: '$415.50'
-2026-05-24 08:46:35  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:35  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
-2026-05-24 08:46:35  [INFO    ]  pages.transfer_page  →  Transferring amount: '10' | from index: 0 → to index: 1
-2026-05-24 08:46:35  [DEBUG   ]  pages.transfer_page  →  Transfer success — title: 'Transfer Complete!' | body: '
+2026-05-24 08:44:34  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:34  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:34  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:35  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:35  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
+2026-05-24 08:44:35  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
+2026-05-24 08:44:35  [INFO    ]  pages.bill_payment_page  →  Filling bill payment form for payee: 
+2026-05-24 08:44:35  [INFO    ]  pages.bill_payment_page  →  Submitting bill payment
+2026-05-24 08:44:35  [DEBUG   ]  pages.bill_payment_page  →  Validation error for field 'name': 'Payee name is required.'
+2026-05-24 08:44:35  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:35  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:36  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:36  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:36  [INFO    ]  pages.accounts_page  →  Navigating to accounts overview page
+2026-05-24 08:44:36  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/overview.htm
+2026-05-24 08:44:37  [DEBUG   ]  pages.accounts_page  →  First account balance text: '$415.50'
+2026-05-24 08:44:37  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:44:37  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:44:37  [INFO    ]  pages.transfer_page  →  Transferring amount: '10' | from index: 0 → to index: 1
+2026-05-24 08:44:37  [DEBUG   ]  pages.transfer_page  →  Transfer success — title: 'Transfer Complete!' | body: '
 			 has been transferred from account # to account #.
 		'
-2026-05-24 08:46:35  [INFO    ]  pages.accounts_page  →  Navigating to accounts overview page
-2026-05-24 08:46:35  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/overview.htm
-2026-05-24 08:46:35  [DEBUG   ]  pages.accounts_page  →  First account balance text: '$405.50'
-2026-05-24 08:46:35  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:35  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:36  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:36  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:36  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:36  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
-2026-05-24 08:46:36  [INFO    ]  pages.transfer_page  →  Transferring amount: '25' | from index: 0 → to index: 1
-2026-05-24 08:46:36  [DEBUG   ]  pages.transfer_page  →  Transfer success — title: 'Transfer Complete!' | body: '
+2026-05-24 08:44:37  [INFO    ]  pages.accounts_page  →  Navigating to accounts overview page
+2026-05-24 08:44:37  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/overview.htm
+2026-05-24 08:44:37  [DEBUG   ]  pages.accounts_page  →  First account balance text: '$405.50'
+2026-05-24 08:44:37  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:44:37  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:38  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:38  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:38  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:44:38  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:44:38  [INFO    ]  pages.transfer_page  →  Transferring amount: '25' | from index: 0 → to index: 1
+2026-05-24 08:44:38  [DEBUG   ]  pages.transfer_page  →  Transfer success — title: 'Transfer Complete!' | body: '
 			 has been transferred from account # to account #.
 		'
-2026-05-24 08:46:36  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
-2026-05-24 08:46:36  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
-2026-05-24 08:46:37  [INFO    ]  pages.bill_payment_page  →  Filling bill payment form for payee: John
-2026-05-24 08:46:37  [INFO    ]  pages.bill_payment_page  →  Submitting bill payment
-2026-05-24 08:46:37  [DEBUG   ]  pages.bill_payment_page  →  Bill payment success — title: 'Bill Payment Complete' | body: '
+2026-05-24 08:44:38  [INFO    ]  pages.bill_payment_page  →  Navigating to bill payment page
+2026-05-24 08:44:38  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
+2026-05-24 08:44:39  [INFO    ]  pages.bill_payment_page  →  Filling bill payment form for payee: John
+2026-05-24 08:44:39  [INFO    ]  pages.bill_payment_page  →  Submitting bill payment
+2026-05-24 08:44:39  [DEBUG   ]  pages.bill_payment_page  →  Bill payment success — title: 'Bill Payment Complete' | body: '
         Bill Payment to  in the amount of  from account  was successful.
     '
-2026-05-24 08:46:37  [INFO    ]  tests.test_e2e  →  Full user journey completed successfully
-2026-05-24 08:46:37  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:37  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:38  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:38  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:38  [INFO    ]  pages.login_page  →  Attempting login with username: wrong_username
-2026-05-24 08:46:38  [INFO    ]  pages.login_page  →  Login form submitted for username: wrong_username
-2026-05-24 08:46:39  [DEBUG   ]  pages.login_page  →  Login error message received: 'The username and password could not be verified.'
-2026-05-24 08:46:39  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:39  [INFO    ]  pages.login_page  →  Attempting login with username: 
-2026-05-24 08:46:39  [INFO    ]  pages.login_page  →  Login form submitted for username: 
-2026-05-24 08:46:39  [DEBUG   ]  pages.login_page  →  Login error message received: 'Please enter a username and password.'
-2026-05-24 08:46:40  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:40  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:40  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam90b3c4
-2026-05-24 08:46:40  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:40  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:40  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:41  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliambb0499
-2026-05-24 08:46:41  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:41  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:41  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:41  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliambb0499
-2026-05-24 08:46:41  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:42  [DEBUG   ]  pages.registration_page  →  Validation error for field 'username': 'This username already exists.'
-2026-05-24 08:46:42  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:42  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:42  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam
-2026-05-24 08:46:42  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:43  [DEBUG   ]  pages.registration_page  →  Validation error for field 'address.zipCode': 'Zip Code is required.'
-2026-05-24 08:46:43  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:43  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:43  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:43  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:43  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:43  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
-2026-05-24 08:46:44  [INFO    ]  pages.transfer_page  →  Transferring amount: '200' | from index: 0 → to index: 1
-2026-05-24 08:46:44  [DEBUG   ]  pages.transfer_page  →  Transfer success — title: 'Transfer Complete!' | body: '
-			 has been transferred from account # to account #.
-		'
-2026-05-24 08:46:44  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:44  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:45  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:45  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:45  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:45  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
-2026-05-24 08:46:45  [INFO    ]  pages.transfer_page  →  Transferring amount: '' | from index: 0 → to index: 1
-2026-05-24 08:46:45  [DEBUG   ]  pages.transfer_page  →  Transfer error — title: '
-			Error!
-		' | body: '
-			An internal error has occurred and has been logged.
-		'
-2026-05-24 08:46:45  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:45  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:46  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:46  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:46  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:46  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
-2026-05-24 08:46:46  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:46  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:47  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:47  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:47  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:47  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:48  [INFO    ]  pages.login_page  →  Attempting login with username: wrong_username
-2026-05-24 08:46:48  [INFO    ]  pages.login_page  →  Login form submitted for username: wrong_username
-2026-05-24 08:46:48  [DEBUG   ]  pages.login_page  →  Login error message received: 'The username and password could not be verified.'
-2026-05-24 08:46:48  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:48  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:49  [INFO    ]  pages.login_page  →  Attempting login with username: 
-2026-05-24 08:46:49  [INFO    ]  pages.login_page  →  Login form submitted for username: 
-2026-05-24 08:46:49  [DEBUG   ]  pages.login_page  →  Login error message received: 'Please enter a username and password.'
-2026-05-24 08:46:49  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:49  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:50  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliamba0d
-2026-05-24 08:46:50  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:50  [DEBUG   ]  pages.registration_page  →  Registration success — title: 'Welcome johnwilliamba0d' | body: 'Your account was created successfully. You are now logged in.'
-2026-05-24 08:46:50  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:50  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:50  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliamfe61
-2026-05-24 08:46:51  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:51  [INFO    ]  pages.registration_page  →  Navigating to registration page
-2026-05-24 08:46:51  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
-2026-05-24 08:46:51  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliamfe61
-2026-05-24 08:46:51  [INFO    ]  pages.registration_page  →  Submitting registration form
-2026-05-24 08:46:51  [DEBUG   ]  pages.registration_page  →  Validation error for field 'username': 'This username already exists.'
-2026-05-24 08:46:51  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:51  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:52  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:52  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:52  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:52  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
-2026-05-24 08:46:52  [INFO    ]  pages.transfer_page  →  Transferring amount: '10' | from index: 0 → to index: 1
-2026-05-24 08:46:52  [DEBUG   ]  pages.transfer_page  →  Transfer success — title: 'Transfer Complete!' | body: '
-			 has been transferred from account # to account #.
-		'
-2026-05-24 08:46:53  [INFO    ]  pages.login_page  →  Navigating to login page
-2026-05-24 08:46:53  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
-2026-05-24 08:46:53  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam699cc4
-2026-05-24 08:46:53  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam699cc4
-2026-05-24 08:46:53  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
-2026-05-24 08:46:53  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:44:39  [INFO    ]  tests.test_e2e  →  Full user journey completed successfully
+2026-05-24 08:44:39  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:39  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:44:40  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:44:40  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:40  [INFO    ]  pages.login_page  →  Attempting login with username: wrong_username
+2026-05-24 08:44:41  [INFO    ]  pages.login_page  →  Login form submitted for username: wrong_username
+2026-05-24 08:44:41  [DEBUG   ]  pages.login_page  →  Login error message received: 'The username and password could not be verified.'
+2026-05-24 08:44:41  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:44:41  [INFO    ]  pages.login_page  →  Attempting login with username: 
+2026-05-24 08:44:41  [INFO    ]  pages.login_page  →  Login form submitted for username: 
+2026-05-24 08:44:42  [DEBUG   ]  pages.login_page  →  Login error message received: 'Please enter a username and password.'
+2026-05-24 08:44:42  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:44:42  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:44:42  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam8add00
+2026-05-24 08:44:42  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:44:43  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:44:43  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:44:43  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliameb3e0e
+2026-05-24 08:44:43  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:44:43  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:44:43  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:44:44  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliameb3e0e
+2026-05-24 08:44:44  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:47:14  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:47:14  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:47:15  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam6534e7
+2026-05-24 08:47:15  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:47:15  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:47:15  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:47:15  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam6534e7
+2026-05-24 08:47:15  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:47:16  [DEBUG   ]  pages.registration_page  →  Validation error for field 'username': 'This username already exists.'
+2026-05-24 08:47:16  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 08:47:16  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 08:47:16  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam
+2026-05-24 08:47:16  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 08:47:17  [DEBUG   ]  pages.registration_page  →  Validation error for field 'address.zipCode': 'Zip Code is required.'
+2026-05-24 08:47:17  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:47:17  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:47:17  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:47:18  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:47:18  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:47:18  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:49:48  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:49:48  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:49:49  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:49:49  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:49:49  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:49:49  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:52:20  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:52:20  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:52:20  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:52:20  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:52:20  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:52:20  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:52:51  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:52:51  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:52:51  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:52:52  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:52:52  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:52:52  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:55:22  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:55:22  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:55:23  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:55:23  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:55:23  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:55:23  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:57:53  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:57:53  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:57:54  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:57:54  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:57:54  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:57:54  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 08:58:25  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 08:58:25  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 08:58:25  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 08:58:25  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 08:58:25  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 08:58:25  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 09:00:56  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:00:56  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:00:56  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:00:57  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:00:57  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 09:00:57  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 09:03:27  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:03:27  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:03:28  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:03:28  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:03:28  [INFO    ]  pages.transfer_page  →  Navigating to transfer funds page
+2026-05-24 09:03:28  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+2026-05-24 09:03:58  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:03:58  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:03:59  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:03:59  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:06:30  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:06:30  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:06:30  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:06:31  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:09:01  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:09:01  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:09:02  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:09:02  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:09:32  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:09:32  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:09:33  [INFO    ]  pages.login_page  →  Attempting login with username: wrong_username
+2026-05-24 09:09:33  [INFO    ]  pages.login_page  →  Login form submitted for username: wrong_username
+2026-05-24 09:09:33  [DEBUG   ]  pages.login_page  →  Login error message received: 'The username and password could not be verified.'
+2026-05-24 09:09:33  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:09:33  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:09:34  [INFO    ]  pages.login_page  →  Attempting login with username: 
+2026-05-24 09:09:34  [INFO    ]  pages.login_page  →  Login form submitted for username: 
+2026-05-24 09:09:34  [DEBUG   ]  pages.login_page  →  Login error message received: 'Please enter a username and password.'
+2026-05-24 09:09:34  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 09:09:34  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 09:09:34  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam1bfe
+2026-05-24 09:09:35  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 09:09:35  [DEBUG   ]  pages.registration_page  →  Registration success — title: 'Signing up is easy!' | body: 'If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.'
+2026-05-24 09:11:35  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 09:11:35  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 09:11:36  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliam2741
+2026-05-24 09:11:36  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 09:11:36  [DEBUG   ]  pages.registration_page  →  Registration success — title: 'Welcome johnwilliam2741' | body: 'Your account was created successfully. You are now logged in.'
+2026-05-24 09:11:36  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 09:11:36  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 09:11:37  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliame6f0
+2026-05-24 09:11:37  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 09:11:37  [INFO    ]  pages.registration_page  →  Navigating to registration page
+2026-05-24 09:11:37  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank/register.htm
+2026-05-24 09:11:37  [INFO    ]  pages.registration_page  →  Filling registration form for username: johnwilliame6f0
+2026-05-24 09:11:38  [INFO    ]  pages.registration_page  →  Submitting registration form
+2026-05-24 09:11:38  [DEBUG   ]  pages.registration_page  →  Validation error for field 'username': 'This username already exists.'
+2026-05-24 09:11:38  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:11:38  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:11:38  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:11:39  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:14:09  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:14:09  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:14:10  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:14:10  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:16:40  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:16:40  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:16:41  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:16:41  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:17:12  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:17:12  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:17:12  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:17:12  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:19:43  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:19:43  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:19:43  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:19:44  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
+2026-05-24 09:22:14  [INFO    ]  pages.login_page  →  Navigating to login page
+2026-05-24 09:22:14  [INFO    ]  pages.base_page  →  Navigating to: https://parabank.parasoft.com/parabank
+2026-05-24 09:22:15  [INFO    ]  pages.login_page  →  Attempting login with username: johnwilliam3dfba7
+2026-05-24 09:22:15  [INFO    ]  pages.login_page  →  Login form submitted for username: johnwilliam3dfba7
