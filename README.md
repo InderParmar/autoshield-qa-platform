@@ -264,6 +264,6 @@ ParaBank throttles sequential requests. A 120-second delay between retries allow
 
 ## Author
 
-**Inderpreet Singh Parmar**
-QA Automation Engineer — Toronto, ON
-[GitHub](https://github.com/InderParmar)
+**Inderpreet Singh Parmar**  
+QA Automation Engineer — Toronto, ON  
+[LinkedIn](https://ca.linkedin.com/in/inderpreet-singh-parmar-7abb23230) &nbsp;|&nbsp; [Portfolio](https://inder-website.vercel.app) &nbsp;|&nbsp; [GitHub](https://github.com/InderParmar)
