@@ -197,6 +197,51 @@ locust --headless -u 50 -r 5 --run-time 60s \
 
 ---
 
+## Running with Docker
+
+The test suite can be run inside a Docker container — no local Python or Playwright installation required.
+
+### Build the image
+
+```bash
+docker build -t autoshield .
+```
+
+### Run all tests (UI + API, Chromium)
+
+```bash
+docker run autoshield
+```
+
+### Copy the HTML report out of the container
+
+```bash
+docker run --name autoshield-run autoshield
+docker cp autoshield-run:/app/reports/report_docker.html ./report_docker.html
+docker rm autoshield-run
+```
+
+### Run only API tests
+
+```bash
+docker run autoshield pytest api_tests/ -v
+```
+
+### Run BDD tests
+
+```bash
+docker run autoshield pytest bdd/ --browser chromium -v
+```
+
+### Run a specific browser
+
+```bash
+docker run autoshield pytest tests/ --browser firefox -v
+```
+
+**Note:** Tests run headless inside the container. The `--headed` flag has no effect.
+The base image (`mcr.microsoft.com/playwright/python:v1.59.0-jammy`) includes Chromium, Firefox, and WebKit pre-installed.
+
 ## Performance Baseline
 
 Run once against ParaBank with 50 concurrent users over 60 seconds:
